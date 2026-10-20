@@ -30,4 +30,4 @@ real	0m14,119s
 user	1m2,730s
 sys	0m4,178s
 
-admin@localhost:~/Dokumente/feature_location_msa/msa_analyzer/build> time ./msa_analyzer analyze ../../msa/build/output/ ../../../feature_isolation/testing/generated/cli ../../../feature_isolation/spl_specs/new_dsl/valid/argo_uml_pair_wise.spl --feature-expressions-file ../../../feature_isolation/argo_uml_pair_wise.txt  --system-id-map ../../util/scenario_pair_wise_map.txt --atomic-types-file ../../atomic_type_files/java_atomic_types.txt
+admin@localhost:~/Dokumente/feature_location_msa/msa_analyzer/build> time ./msa_analyzer analyze ../../msa/build/output/ ../../../feature_isolation/testing/generated/cli ../../../feature_isolation/spl_specs/new_dsl/valid/argo_uml_pair_wise.spl --feature-expressions-file ../../../feature_isolation/argo_uml_pairwise.txt  --system-id-map ../../util/scenario_pair_wise_map.txt --atomic-types-file ../../atomic_type_files/java_atomic_types.txt

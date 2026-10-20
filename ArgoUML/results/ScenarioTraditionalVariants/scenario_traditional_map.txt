@@ -1,0 +1,10 @@
+P01_AllDisabled.config,0
+P02_AllEnabled.config,255
+P03_LoggingDisabled.config,253
+P04_CognitiveDisabled.config,254
+P05_SequenceDiagramDisabled.config,239
+P06_UseCaseDiagramDisabled.config,223
+P07_DeploymentDiagramDisabled.config,127
+P08_CollaborationDiagramDisabled.config,191
+P09_StateDiagramDisabled.config,247
+P10_ActivityDiagramDisabled.config,251
