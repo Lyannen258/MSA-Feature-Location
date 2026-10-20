@@ -1,0 +1,12 @@
+time ./feature_location_msa java ~/eclipse-workspace/ArgoUMLSPLBenchmark/scenarios/ScenarioAllVariants/variants/
+
+real	2457m11,431s
+user	5421m54,292s
+sys	1m16,288s
+
+
+time ./msa_analyzer analyze ../../msa/build/output/ ../../../feature_isolation/testing/generated/cli ../../../feature_isolation/spl_specs/new_dsl/valid/argo_uml_all.spl --system-id-map ../../util/scenario_all_map.txt --threads 10
+
+real	4m2,630s
+user	35m2,504s
+sys	1m14,260s

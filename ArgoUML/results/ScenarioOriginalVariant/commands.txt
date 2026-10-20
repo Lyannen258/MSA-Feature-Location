@@ -1,0 +1,15 @@
+time ./feature_location_msa java ~/eclipse-workspace/ArgoUMLSPLBenchmark/scenarios/ScenarioOriginalVariant/variants/ --atomic-types-file ../../atomic_type_files/java_atomic_types.txt
+
+real	0m0,990s
+user	0m16,189s
+sys	0m4,059s
+
+time ./msa_analyzer analyze ../../msa/build/output/ ../../../feature_isolation/testing/generated/cli ../../../feature_isolation/spl_specs/new_dsl/valid/argo_uml_original.spl --feature-expressions-file ../../../feature_isolation/argo_uml_original.txt  --system-id-map ../../util/scenario_original_map.txt --atomic-types-file ../../atomic_type_files/java_atomic_types.txt
+
+real	0m47,524s
+user	6m59,705s
+sys	0m9,342s
+
+real	0m4,223s
+user	0m25,490s
+sys	0m0,968s

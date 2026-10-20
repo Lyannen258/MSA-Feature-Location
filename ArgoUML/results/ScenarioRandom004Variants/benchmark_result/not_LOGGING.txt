@@ -1,0 +1,5 @@
+org.argouml.application.helpers.ResourceLoaderWrapper lookupIcon(Object) Refinement
+org.argouml.model.mdr.ModelEventPumpMDRImpl buildTypeMap(ModelPackage) Refinement
+org.argouml.persistence.ZargoFilePersister readerToWriter(Reader,Writer) Refinement
+org.argouml.ui.explorer.PerspectiveManager loadRules() Refinement
+org.argouml.uml.diagram.ui.FigAssociation paint(Graphics) Refinement

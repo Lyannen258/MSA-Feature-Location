@@ -1,0 +1,6 @@
+org.argouml.uml.cognitive.critics.CrNodesOverlap Refinement
+org.argouml.uml.cognitive.critics.CrNodesOverlap computeOffenders(Diagram) Refinement
+org.argouml.uml.cognitive.critics.ProfileCodeGeneration ProfileCodeGeneration(ProfileGoodPractices) Refinement
+org.argouml.uml.cognitive.critics.ProfileGoodPractices ProfileGoodPractices() Refinement
+org.argouml.uml.diagram.DiagramFactory Refinement
+org.argouml.uml.diagram.DiagramFactory createDiagram(Class,Object,Object) Refinement

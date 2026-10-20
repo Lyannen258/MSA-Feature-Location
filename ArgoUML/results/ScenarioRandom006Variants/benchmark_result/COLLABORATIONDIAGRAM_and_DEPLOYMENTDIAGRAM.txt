@@ -1,0 +1,2 @@
+org.argouml.ui.explorer.rules.GoCollaborationToDiagram Refinement
+org.argouml.ui.explorer.rules.GoCollaborationToDiagram getChildren(Object) Refinement

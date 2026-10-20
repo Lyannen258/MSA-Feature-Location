@@ -1,0 +1,7 @@
+org.argouml.ui.cmd.GenericArgoMenuBar initMenuCreate() Refinement
+org.argouml.ui.cmd.ShortcutMgr Refinement
+org.argouml.uml.diagram.DiagramFactory Refinement
+org.argouml.uml.diagram.DiagramFactory createDiagram(Class,Object,Object) Refinement
+org.argouml.uml.diagram.deployment.ui.UMLDeploymentDiagram Refinement
+org.argouml.uml.diagram.deployment.ui.UMLDeploymentDiagram doesAccept(Object) Refinement
+org.argouml.uml.diagram.deployment.ui.UMLDeploymentDiagram drop(Object,Point) Refinement

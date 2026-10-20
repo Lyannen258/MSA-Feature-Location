@@ -1,0 +1,3 @@
+org.argouml.ui.cmd.ShortcutMgr Refinement
+org.argouml.ui.explorer.ExplorerPopup initMenuCreateDiagrams() Refinement
+org.argouml.uml.diagram.UmlDiagramRenderer getFigEdgeFor(Object,Map) Refinement

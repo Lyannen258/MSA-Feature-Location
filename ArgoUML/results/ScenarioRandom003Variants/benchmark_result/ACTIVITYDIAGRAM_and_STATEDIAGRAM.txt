@@ -1,0 +1,4 @@
+org.argouml.ui.explorer.rules.GoStatemachineToDiagram Refinement
+org.argouml.ui.explorer.rules.GoStatemachineToDiagram getChildren(Object) Refinement
+org.argouml.uml.diagram.state.ui.UMLStateDiagram Refinement
+org.argouml.uml.diagram.state.ui.UMLStateDiagram drop(Object,Point) Refinement

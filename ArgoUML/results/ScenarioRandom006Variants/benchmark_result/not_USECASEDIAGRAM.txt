@@ -1,0 +1,2 @@
+org.argouml.profile.UserDefinedProfile finishLoading() Refinement
+org.argouml.ui.ProjectBrowser loadProject(File,boolean,ProgressMonitor) Refinement

@@ -1,0 +1,2 @@
+org.argouml.application.Main initializeSubsystems(SimpleTimer,SplashScreen) Refinement
+org.argouml.ui.cmd.GenericArgoMenuBar initMenuCreate() Refinement

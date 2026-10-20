@@ -1,0 +1,23 @@
+org.argouml.uml.ui.ActionNewDiagram createCollaboration(Object)
+org.argouml.notation.providers.uml.AbstractMessageNotationUml buildAction(Object) Refinement
+org.argouml.notation.providers.uml.AbstractMessageNotationUml handlePredecessors(Object,List<List>,boolean) Refinement
+org.argouml.notation.providers.uml.AbstractMessageNotationUml handleSequenceNumber(Object,List<Integer>,boolean) Refinement
+org.argouml.notation.providers.uml.AbstractMessageNotationUml insertSuccessor(Object,Object,int) Refinement
+org.argouml.notation.providers.uml.AssociationRoleNotationUml parseRole(Object,String) Refinement
+org.argouml.notation.providers.uml.ClassifierRoleNotationUml parseClassifierRole(Object,String) Refinement
+org.argouml.uml.ui.behavior.collaborations.ActionAddClassifierRoleBase doIt(Collection) Refinement
+org.argouml.uml.ui.behavior.collaborations.ActionAddClassifierRoleBase getChoices() Refinement
+org.argouml.uml.ui.behavior.collaborations.ActionAddMessagePredecessor doIt(Collection) Refinement
+org.argouml.uml.ui.behavior.collaborations.ActionAddMessagePredecessor getChoices() Refinement
+org.argouml.uml.ui.behavior.collaborations.ActionRemoveClassifierRoleBase actionPerformed(ActionEvent) Refinement
+org.argouml.uml.ui.behavior.collaborations.ActionSetAssociationRoleBase actionPerformed(ActionEvent) Refinement
+org.argouml.uml.ui.behavior.collaborations.ActionSetRepresentedClassifierCollaboration actionPerformed(ActionEvent) Refinement
+org.argouml.uml.ui.behavior.collaborations.ActionSetRepresentedOperationCollaboration actionPerformed(ActionEvent) Refinement
+org.argouml.uml.ui.behavior.collaborations.UMLAssociationRoleBaseComboBoxModel buildModelList() Refinement
+org.argouml.uml.ui.behavior.collaborations.UMLAssociationRoleBaseComboBoxModel isValidElement(Object) Refinement
+org.argouml.uml.ui.behavior.collaborations.UMLClassifierRoleAvailableContentsListModel buildModelList() Refinement
+org.argouml.uml.ui.behavior.collaborations.UMLClassifierRoleAvailableFeaturesListModel buildModelList() Refinement
+org.argouml.uml.ui.behavior.collaborations.UMLMessageActivatorComboBox doIt(ActionEvent) Refinement
+org.argouml.uml.ui.behavior.collaborations.UMLMessageActivatorComboBoxModel buildModelList() Refinement
+org.argouml.uml.ui.behavior.common_behavior.ActionNewAction actionPerformed(ActionEvent) Refinement
+org.argouml.uml.ui.behavior.common_behavior.PropPanelStimulus setSender(Object) Refinement

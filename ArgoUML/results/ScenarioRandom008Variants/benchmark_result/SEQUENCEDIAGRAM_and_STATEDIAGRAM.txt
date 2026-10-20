@@ -1,0 +1,2 @@
+org.argouml.uml.diagram.state.ui.FigFinalState makeSelection() Refinement
+org.argouml.uml.diagram.state.ui.FigStateVertex makeSelection() Refinement

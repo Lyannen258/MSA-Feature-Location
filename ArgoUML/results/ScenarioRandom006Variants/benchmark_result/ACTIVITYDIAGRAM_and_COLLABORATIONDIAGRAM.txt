@@ -1,0 +1,4 @@
+org.argouml.ui.cmd.GenericArgoMenuBar initMenuCreate() Refinement
+org.argouml.ui.cmd.ShortcutMgr Refinement
+org.argouml.ui.explorer.ExplorerPopup initMenuCreateDiagrams() Refinement
+org.argouml.uml.diagram.UmlDiagramRenderer getFigNodeFor(Object,int,int,Map) Refinement

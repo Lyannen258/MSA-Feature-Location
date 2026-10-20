@@ -1,0 +1,26 @@
+org.argouml.uml.diagram.deployment.DeploymentDiagramGraphModel Refinement
+org.argouml.uml.diagram.deployment.DeploymentDiagramGraphModel addEdge(Object) Refinement
+org.argouml.uml.diagram.deployment.DeploymentDiagramGraphModel addNode(Object) Refinement
+org.argouml.uml.diagram.deployment.DeploymentDiagramGraphModel canAddEdge(Object) Refinement
+org.argouml.uml.diagram.deployment.DeploymentDiagramGraphModel vetoableChange(PropertyChangeEvent) Refinement
+org.argouml.uml.diagram.deployment.ui.DeploymentDiagramRenderer Refinement
+org.argouml.uml.diagram.deployment.ui.DeploymentDiagramRenderer getFigNodeFor(GraphModel,Layer,Object,Map) Refinement
+org.argouml.uml.diagram.deployment.ui.UMLDeploymentDiagram Refinement
+org.argouml.uml.diagram.deployment.ui.UMLDeploymentDiagram drop(Object,Point) Refinement
+org.argouml.uml.diagram.deployment.ui.UMLDeploymentDiagram setModelElementNamespace(Object,Object) Refinement
+org.argouml.uml.diagram.deployment.ui.UMLDeploymentDiagram setNamespace(Object) Refinement
+org.argouml.uml.diagram.state.StateDiagramGraphModel Refinement
+org.argouml.uml.diagram.state.StateDiagramGraphModel addEdge(Object) Refinement
+org.argouml.uml.diagram.state.StateDiagramGraphModel addNode(Object) Refinement
+org.argouml.uml.diagram.state.StateDiagramGraphModel canAddEdge(Object) Refinement
+org.argouml.uml.diagram.state.StateDiagramGraphModel canConnect(Object,Object) Refinement
+org.argouml.uml.diagram.state.StateDiagramGraphModel connect(Object,Object,Object) Refinement
+org.argouml.uml.diagram.state.StateDiagramGraphModel getInEdges(Object) Refinement
+org.argouml.uml.diagram.state.StateDiagramGraphModel getOutEdges(Object) Refinement
+org.argouml.uml.diagram.state.StateDiagramGraphModel vetoableChange(PropertyChangeEvent) Refinement
+org.argouml.uml.diagram.state.ui.StateDiagramRenderer Refinement
+org.argouml.uml.diagram.state.ui.StateDiagramRenderer getFigEdgeFor(GraphModel,Layer,Object,Map) Refinement
+org.argouml.uml.diagram.state.ui.StateDiagramRenderer getFigNodeFor(GraphModel,Layer,Object,Map) Refinement
+org.argouml.uml.ui.ActionDeploymentDiagram Refinement
+org.argouml.uml.ui.ActionDeploymentDiagram createDiagram(Object) Refinement
+org.argouml.uml.ui.ActionDeploymentDiagram isValidNamespace(Object) Refinement

@@ -1,0 +1,3 @@
+org.argouml.uml.diagram.DiagramFactory Refinement
+org.argouml.uml.diagram.DiagramFactory createDiagram(Class,Object,Object) Refinement
+org.argouml.uml.diagram.UmlDiagramRenderer getFigEdgeFor(Object,Map) Refinement

@@ -1,0 +1,3 @@
+org.argouml.uml.diagram.UmlDiagramRenderer getFigNodeFor(Object,int,int,Map) Refinement
+org.argouml.uml.diagram.state.ui.FigFinalState makeSelection() Refinement
+org.argouml.uml.diagram.state.ui.FigStateVertex makeSelection() Refinement

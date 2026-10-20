@@ -1,0 +1,7 @@
+org.argouml.application.helpers.ResourceLoaderWrapper lookupIcon(Object) Refinement
+org.argouml.model.mdr.ModelEventPumpMDRImpl buildTypeMap(ModelPackage) Refinement
+org.argouml.persistence.ZargoFilePersister readerToWriter(Reader,Writer) Refinement
+org.argouml.ui.explorer.ExplorerPopup ExplorerPopup(Object,MouseEvent) Refinement
+org.argouml.ui.explorer.rules.GoNamespaceToDiagram getChildren(Object) Refinement
+org.argouml.uml.diagram.DiagramFactory createInternal(DiagramType,Object,Object,DiagramSettings) Refinement
+org.argouml.uml.diagram.ui.FigAssociation paint(Graphics) Refinement

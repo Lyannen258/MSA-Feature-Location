@@ -1,0 +1,2 @@
+org.argouml.uml.diagram.DiagramFactory DiagramFactory() Refinement
+org.argouml.uml.diagram.DiagramFactory createDiagram(Class,Object,Object) Refinement

@@ -1,0 +1,33 @@
+time ./feature_location_msa java ~/eclipse-workspace/ArgoUMLSPLBenchmark/scenarios/ScenarioRandom002Variants/variants/ --atomic-types-file ../../atomic_type_files/java_atomic_types.txt
+
+________________________________________________________
+Executed in    7.55 secs    fish           external
+   usr time   52.16 secs   38.28 millis   52.13 secs
+   sys time    1.00 secs    6.33 millis    1.00 secs
+   
+   
+   
+time ./msa_analyzer analyze ../../msa/build/output/ ../../../feature_isolation/testing/generated/cli ../../../feature_isolation/spl_specs/new_dsl/valid/argo_uml_random_002.spl --feature-expressions-file ../../../feature_isolation/random_002_traces.txt --system-id-map ../../util/random_002_system_id_map.txt --atomic-types-file ../../atomic_type_files/java_atomic_types.txt
+
+________________________________________________________
+Executed in   22.29 mins    fish           external
+   usr time  164.78 mins    0.00 micros  164.78 mins
+   sys time    1.04 mins  742.00 micros    1.04 mins
+
+
+
+
+
+-----------------
+time ./feature_location_msa java ~/eclipse-workspace/ArgoUMLSPLBenchmark/scenarios/ScenarioRandom002Variants/variants/ --atomic-types-file ../../atomic_type_files/java_atomic_types.txt
+Discovered 2289 file families
+Processed 2289/2289 file families file families families
+real	0m2,404s
+user	0m45,123s
+sys	0m2,792s
+
+
+real	0m5,410s
+user	0m28,902s
+sys	0m1,209s
+admin@localhost:~/Dokumente/feature_location_msa/msa_analyzer/build> time ./msa_analyzer analyze ../../msa/build/output/ ../../../feature_isolation/testing/generated/cli ../../../feature_isolation/spl_specs/new_dsl/valid/argo_uml_002.spl --feature-expressions-file ../../../feature_isolation/argo_uml_random_002.txt  --system-id-map ../../util/scenario_random_002_map.txt --atomic-types-file ../../atomic_type_files/java_atomic_types.txt

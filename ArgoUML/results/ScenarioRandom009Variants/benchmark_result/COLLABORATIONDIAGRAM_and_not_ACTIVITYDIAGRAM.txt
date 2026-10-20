@@ -1,0 +1,2 @@
+org.argouml.ui.explorer.ExplorerPopup initMenuCreateDiagrams() Refinement
+org.argouml.uml.diagram.UmlDiagramRenderer getFigNodeFor(Object,int,int,Map) Refinement

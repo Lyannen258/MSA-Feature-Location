@@ -1,0 +1,5 @@
+org.argouml.application.Main initializeSubsystems(SimpleTimer,SplashScreen) Refinement
+org.argouml.persistence.ModelMemberFilePersister registerDiagramsInternal(Project,Collection,boolean) Refinement
+org.argouml.uml.diagram.activity.ui.UMLActivityDiagram Refinement
+org.argouml.uml.diagram.activity.ui.UMLActivityDiagram doesAccept(Object) Refinement
+org.argouml.uml.diagram.activity.ui.UMLActivityDiagram drop(Object,Point) Refinement
