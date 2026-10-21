@@ -1,24 +1,14 @@
 time ./feature_location_msa java ~/eclipse-workspace/ArgoUMLSPLBenchmark/scenarios/ScenarioRandom008Variants/variants/ --atomic-types-file ../../atomic_type_files/java_atomic_types.txt
 
-________________________________________________________
-Executed in  146.80 secs    fish           external
-   usr time  896.17 secs    0.10 millis  896.17 secs
-   sys time    8.05 secs    1.07 millis    8.05 secs
-   
-   
-
-time ./msa_analyzer analyze ../../msa/build/output/ ../../../feature_isolation/testing/generated/cli ../../../feature_isolation/spl_specs/new_dsl/valid/argo_uml_random_008.spl --feature-expressions-file ../../../feature_isolation/random_008_traces.txt --system-id-map ../../util/random_008_system_id_map.txt --atomic-types-file ../../atomic_type_files/java_atomic_types.txt
-
-________________________________________________________
-Executed in  388.18 secs    fish           external
-   usr time   45.38 mins    0.10 millis   45.38 mins
-   sys time    0.27 mins    1.07 millis    0.27 mins
-
-
 real	0m37,117s
 user	7m28,694s
 sys	0m7,121s
 
+
+
+time ./msa_analyzer analyze ../../msa/build/output/ ../../../feature_isolation/testing/generated/cli ../../../feature_isolation/spl_specs/new_dsl/valid/argo_uml_random_008.spl --feature-expressions-file ../../../feature_isolation/random_008_traces.txt --system-id-map ../../util/random_008_system_id_map.txt --atomic-types-file ../../atomic_type_files/java_atomic_types.txt
+
 real	0m7,765s
 user	0m54,764s
 sys	0m8,106s
+

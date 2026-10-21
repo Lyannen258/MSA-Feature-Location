@@ -1,33 +1,13 @@
 time ./feature_location_msa java ~/eclipse-workspace/ArgoUMLSPLBenchmark/scenarios/ScenarioPairWiseVariants/variants/ --atomic-types-file ../../atomic_type_files/java_atomic_types.txt
 
-________________________________________________________
-Executed in  133.05 secs    fish           external
-   usr time  869.45 secs  948.00 micros  869.45 secs
-   sys time    7.82 secs    0.00 micros    7.82 secs
-   
-   
-   
- time ./msa_analyzer analyze ../../msa/build/output/ ../../../feature_isolation/testing/generated/cli ../../../feature_isolation/spl_specs/new_dsl/valid/argo_uml_pairwise.spl --feature-expressions-file ../../../feature_isolation/pairwise_traces.txt --system-id-map ../../util/pairwise_system_id_map.txt --atomic-types-file ../../atomic_type_files/java_atomic_types.txt
- 
- ________________________________________________________
-Executed in  314.05 secs    fish           external
-   usr time   38.48 mins  907.00 micros   38.48 mins
-   sys time    0.22 mins  155.00 micros    0.22 mins
-
-
-------------------------------------------------
-time ./feature_location_msa java ~/eclipse-workspace/ArgoUMLSPLBenchmark/scenarios/ScenarioPairWiseVariants/variants/ --atomic-types-file ../../atomic_type_files/java_atomic_types.txt
-Discovered 2289 file families
-Processed 2289/2289 file familieslies file families
-
 real	0m44,880s
 user	7m19,809s
 sys	0m8,523s
 
 
 
+time ./msa_analyzer analyze ../../msa/build/output/ ../../../feature_isolation/testing/generated/cli ../../../feature_isolation/spl_specs/new_dsl/valid/argo_uml_pair_wise.spl --feature-expressions-file ../../../feature_isolation/argo_uml_pairwise.txt  --system-id-map ../../util/scenario_pair_wise_map.txt --atomic-types-file ../../atomic_type_files/java_atomic_types.txt
+
 real	0m14,119s
 user	1m2,730s
 sys	0m4,178s
-
-admin@localhost:~/Dokumente/feature_location_msa/msa_analyzer/build> time ./msa_analyzer analyze ../../msa/build/output/ ../../../feature_isolation/testing/generated/cli ../../../feature_isolation/spl_specs/new_dsl/valid/argo_uml_pair_wise.spl --feature-expressions-file ../../../feature_isolation/argo_uml_pairwise.txt  --system-id-map ../../util/scenario_pair_wise_map.txt --atomic-types-file ../../atomic_type_files/java_atomic_types.txt

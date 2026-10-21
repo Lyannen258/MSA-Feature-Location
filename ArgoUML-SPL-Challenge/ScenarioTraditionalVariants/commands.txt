@@ -1,20 +1,12 @@
 time ./feature_location_msa java ~/eclipse-workspace/ArgoUMLSPLBenchmark/scenarios/ScenarioTraditionalVariants/variants/ --atomic-types-file ../../atomic_type_files/java_atomic_types.txt
-
-________________________________________________________
-Executed in  131.06 secs    fish           external
-   usr time  847.42 secs    0.00 micros  847.42 secs
-   sys time    8.61 secs  996.00 micros    8.61 secs
    
 real	0m41,095s
 user	7m40,285s
 sys	0m7,771s
+
+
  
- time ./msa_analyzer analyze ../../msa/build/output/ ../../../feature_isolation/testing/generated/cli ../../../feature_isolation/spl_specs/new_dsl/valid/argo_uml_traditional.spl --feature-expressions-file ../../../feature_isolation/traditional_traces.txt --system-id-map ../../util/traditional_system_id_map.txt --atomic-types-file ../../atomic_type_files/java_atomic_types.txt
- 
- ________________________________________________________
-Executed in   52.22 secs    fish           external
-   usr time  303.33 secs  847.00 micros  303.33 secs
-   sys time    3.68 secs  126.00 micros    3.68 secs
+time ./msa_analyzer analyze ../../msa/build/output/ ../../../feature_isolation/testing/generated/cli ../../../feature_isolation/spl_specs/new_dsl/valid/argo_uml_traditional.spl --feature-expressions-file ../../../feature_isolation/traditional_traces.txt --system-id-map ../../util/traditional_system_id_map.txt --atomic-types-file ../../atomic_type_files/java_atomic_types.txt
 
 real	0m12,056s
 user	1m14,055s
