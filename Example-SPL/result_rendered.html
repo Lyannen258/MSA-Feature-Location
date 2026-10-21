@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <title>Feature viewer</title>
+
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <meta name="description" content="" />
+
+  <style>
+    body {
+      font-family: "sans-serif";
+      font-size: 12px;
+    }
+
+    #code {
+      font-family: monospace;
+    }
+    
+    #featureSelect {
+      position: sticky;
+      top: 10px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+    <div style="display: flex; gap: 50px">
+      <div>
+        
+      <div id="featureSelect">
+      </div>
+      </div>
+      <div id="code">
+        <pre><span title="⊤" class="⊤">#include</span>&nbsp;<span title="⊤" class="⊤">&lt;concepts&gt;</span>
+
+<span title="⊤" class="⊤">auto</span>&nbsp;<span title="⊤" class="⊤">factorial</span><span title="⊤" class="⊤">(</span><span title="⊤" class="⊤">std</span><span title="⊤" class="⊤">::</span><span title="⊤" class="⊤">unsigned_integral</span>&nbsp;<span title="⊤" class="⊤">auto</span>&nbsp;<span title="⊤" class="⊤">n</span><span title="⊤" class="⊤">)</span>&nbsp;<span title="r" class="r">-&gt;</span>&nbsp;<span title="r" class="r">decltype</span><span title="r" class="r">(</span><span title="r" class="r">n</span><span title="r" class="r">)</span>
+<span title="⊤" class="⊤">{</span>
+&nbsp;&nbsp;<span title="r" class="r">return</span>&nbsp;<span title="⊤" class="⊤">(</span><span title="⊤" class="⊤">n</span>&nbsp;<span title="r" class="r">==</span>&nbsp;<span title="r" class="r">0</span>&nbsp;<span title="r" class="r">?</span>&nbsp;<span title="⊤" class="⊤">1</span>&nbsp;<span title="r" class="r">:</span>&nbsp;<span title="r" class="r">n</span>&nbsp;<span title="r_∧_¬c" class="r_∧_¬c">*</span>&nbsp;<span title="r" class="r">factorial</span><span title="r" class="r">(</span><span title="⊤" class="⊤">n</span>&nbsp;<span title="r" class="r">-</span>&nbsp;<span title="r" class="r">1</span><span title="r" class="r">)</span><span title="r" class="r">)</span><span title="⊤" class="⊤">;</span>
+<span title="⊤" class="⊤">}</span></pre><hr><pre><span title="⊤" class="⊤">#include</span>&nbsp;<span title="⊤" class="⊤">&lt;concepts&gt;</span>
+
+<span title="⊤" class="⊤">auto</span>&nbsp;<span title="⊤" class="⊤">factorial</span><span title="⊤" class="⊤">(</span><span title="⊤" class="⊤">std</span><span title="⊤" class="⊤">::</span><span title="⊤" class="⊤">unsigned_integral</span>&nbsp;<span title="⊤" class="⊤">auto</span>&nbsp;<span title="⊤" class="⊤">n</span><span title="⊤" class="⊤">)</span>
+<span title="⊤" class="⊤">{</span>
+&nbsp;&nbsp;<span title="i" class="i">decltype</span><span title="i" class="i">(</span><span title="i" class="i">n</span><span title="i" class="i">)</span>&nbsp;<span title="i" class="i">result</span>&nbsp;<span title="i" class="i">{</span>&nbsp;<span title="i" class="i">1</span>&nbsp;<span title="i" class="i">}</span><span title="i" class="i">;</span>
+&nbsp;&nbsp;<span title="i" class="i">while</span>&nbsp;<span title="⊤" class="⊤">(</span><span title="⊤" class="⊤">n</span>&nbsp;<span title="i" class="i">&gt;</span>&nbsp;<span title="⊤" class="⊤">1</span><span title="i" class="i">)</span>
+&nbsp;&nbsp;<span title="i" class="i">{</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span title="i" class="i">result</span>&nbsp;<span title="i_∧_¬c" class="i_∧_¬c">*=</span>&nbsp;<span title="⊤" class="⊤">n</span><span title="i" class="i">--</span><span title="i" class="i">;</span>
+&nbsp;&nbsp;<span title="i" class="i">}</span>
+&nbsp;&nbsp;<span title="i" class="i">return</span>&nbsp;<span title="i" class="i">result</span><span title="⊤" class="⊤">;</span>
+<span title="⊤" class="⊤">}</span></pre><hr><pre><span title="⊤" class="⊤">#include</span>&nbsp;<span title="⊤" class="⊤">&lt;concepts&gt;</span>
+<span title="l" class="l">#include</span>&nbsp;<span title="l" class="l">&lt;iostream&gt;</span>
+<span title="l" class="l">#include</span>&nbsp;<span title="l" class="l">&lt;source_location&gt;</span>
+<span title="c_∨_l" class="c_∨_l">#include</span>&nbsp;<span title="c_∨_l" class="c_∨_l">&lt;string&gt;</span>
+
+<span title="l" class="l">class</span>&nbsp;<span title="l" class="l">Logger</span>
+<span title="l" class="l">{</span>
+&nbsp;&nbsp;<span title="l" class="l">public</span><span title="l" class="l">:</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">Logger</span><span title="l" class="l">(</span><span title="l" class="l">const</span>&nbsp;<span title="l" class="l">std</span><span title="l" class="l">::</span><span title="l" class="l">string</span>&nbsp;<span title="l" class="l">arguments</span>&nbsp;<span title="l" class="l">=</span>&nbsp;<span title="l" class="l">"</span><span title="l" class="l">"</span><span title="l" class="l">,</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">const</span>&nbsp;<span title="l" class="l">std</span><span title="l" class="l">::</span><span title="l" class="l">source_location</span>&nbsp;<span title="l" class="l">location</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">=</span>&nbsp;<span title="l" class="l">std</span><span title="l" class="l">::</span><span title="l" class="l">source_location</span><span title="l" class="l">::</span><span title="l" class="l">current</span><span title="l" class="l">(</span><span title="l" class="l">)</span><span title="l" class="l">)</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">:</span>&nbsp;<span title="l" class="l">m_arguments</span>&nbsp;<span title="l" class="l">{</span>&nbsp;<span title="l" class="l">arguments</span>&nbsp;<span title="l" class="l">}</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">,</span>&nbsp;<span title="l" class="l">m_location</span>&nbsp;<span title="l" class="l">{</span>&nbsp;<span title="l" class="l">location</span>&nbsp;<span title="l" class="l">}</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">{</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">std</span><span title="l" class="l">::</span><span title="l" class="l">cout</span>&nbsp;<span title="l" class="l">&lt;&lt;</span>&nbsp;<span title="l" class="l">'</span><span title="l" class="l">&gt;</span><span title="l" class="l">'</span>&nbsp;<span title="l" class="l">&lt;&lt;</span>&nbsp;<span title="l" class="l">m_location</span><span title="l" class="l">.</span><span title="l" class="l">function_name</span><span title="l" class="l">(</span><span title="l" class="l">)</span>&nbsp;<span title="l" class="l">&lt;&lt;</span>&nbsp;<span title="l" class="l">'</span><span title="l" class="l"> </span><span title="l" class="l">'</span>&nbsp;<span title="l" class="l">&lt;&lt;</span>&nbsp;<span title="l" class="l">m_arguments</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">&lt;&lt;</span>&nbsp;<span title="l" class="l">'</span><span title="l" class="l">\t</span><span title="l" class="l">'</span>&nbsp;<span title="l" class="l">&lt;&lt;</span>&nbsp;<span title="l" class="l">m_location</span><span title="l" class="l">.</span><span title="l" class="l">file_name</span><span title="l" class="l">(</span><span title="l" class="l">)</span>&nbsp;<span title="l" class="l">&lt;&lt;</span>&nbsp;<span title="l" class="l">'</span><span title="l" class="l"> </span><span title="l" class="l">'</span>&nbsp;<span title="l" class="l">&lt;&lt;</span>&nbsp;<span title="l" class="l">m_location</span><span title="l" class="l">.</span><span title="l" class="l">line</span><span title="l" class="l">(</span><span title="l" class="l">)</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">&lt;&lt;</span>&nbsp;<span title="l" class="l">'</span><span title="l" class="l">|</span><span title="l" class="l">'</span>&nbsp;<span title="l" class="l">&lt;&lt;</span>&nbsp;<span title="l" class="l">m_location</span><span title="l" class="l">.</span><span title="l" class="l">column</span><span title="l" class="l">(</span><span title="l" class="l">)</span>&nbsp;<span title="l" class="l">&lt;&lt;</span>&nbsp;<span title="l" class="l">'</span><span title="l" class="l">\n</span><span title="l" class="l">'</span><span title="l" class="l">;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">}</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">~</span><span title="l" class="l">Logger</span><span title="l" class="l">(</span><span title="l" class="l">)</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">{</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">std</span><span title="l" class="l">::</span><span title="l" class="l">cout</span>&nbsp;<span title="l" class="l">&lt;&lt;</span>&nbsp;<span title="l" class="l">'</span><span title="l" class="l">&lt;</span><span title="l" class="l">'</span>&nbsp;<span title="l" class="l">&lt;&lt;</span>&nbsp;<span title="l" class="l">m_location</span><span title="l" class="l">.</span><span title="l" class="l">function_name</span><span title="l" class="l">(</span><span title="l" class="l">)</span>&nbsp;<span title="l" class="l">&lt;&lt;</span>&nbsp;<span title="l" class="l">std</span><span title="l" class="l">::</span><span title="l" class="l">endl</span><span title="l" class="l">;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">}</span>
+&nbsp;&nbsp;<span title="l" class="l">private</span><span title="l" class="l">:</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">std</span><span title="l" class="l">::</span><span title="l" class="l">string</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">m_arguments</span><span title="l" class="l">;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">std</span><span title="l" class="l">::</span><span title="l" class="l">source_location</span>&nbsp;<span title="l" class="l">m_location</span><span title="l" class="l">;</span>
+<span title="l" class="l">}</span><span title="l" class="l">;</span>
+
+<span title="⊤" class="⊤">auto</span>&nbsp;<span title="⊤" class="⊤">factorial</span><span title="⊤" class="⊤">(</span><span title="⊤" class="⊤">std</span><span title="⊤" class="⊤">::</span><span title="⊤" class="⊤">unsigned_integral</span>&nbsp;<span title="⊤" class="⊤">auto</span>&nbsp;<span title="⊤" class="⊤">n</span><span title="⊤" class="⊤">)</span>&nbsp;<span title="r" class="r">-&gt;</span>&nbsp;<span title="r" class="r">decltype</span><span title="r" class="r">(</span><span title="r" class="r">n</span><span title="r" class="r">)</span>
+<span title="⊤" class="⊤">{</span>
+&nbsp;&nbsp;<span title="l" class="l">Logger</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">log</span>&nbsp;<span title="l" class="l">{</span>&nbsp;<span title="l" class="l">std</span><span title="l" class="l">::</span><span title="l" class="l">to_string</span><span title="l" class="l">(</span><span title="l" class="l">n</span><span title="l" class="l">)</span>&nbsp;<span title="l" class="l">}</span><span title="l" class="l">;</span>
+&nbsp;&nbsp;<span title="r" class="r">return</span>&nbsp;<span title="⊤" class="⊤">(</span><span title="⊤" class="⊤">n</span>&nbsp;<span title="r" class="r">==</span>&nbsp;<span title="r" class="r">0</span>&nbsp;<span title="r" class="r">?</span>&nbsp;<span title="⊤" class="⊤">1</span>&nbsp;<span title="r" class="r">:</span>&nbsp;<span title="r" class="r">n</span>&nbsp;<span title="r_∧_¬c" class="r_∧_¬c">*</span>&nbsp;<span title="r" class="r">factorial</span><span title="r" class="r">(</span><span title="⊤" class="⊤">n</span>&nbsp;<span title="r" class="r">-</span>&nbsp;<span title="r" class="r">1</span><span title="r" class="r">)</span><span title="r" class="r">)</span><span title="⊤" class="⊤">;</span>
+<span title="⊤" class="⊤">}</span></pre><hr><pre><span title="⊤" class="⊤">#include</span>&nbsp;<span title="⊤" class="⊤">&lt;concepts&gt;</span>
+<span title="l" class="l">#include</span>&nbsp;<span title="l" class="l">&lt;iostream&gt;</span>
+<span title="l" class="l">#include</span>&nbsp;<span title="l" class="l">&lt;source_location&gt;</span>
+<span title="c_∨_l" class="c_∨_l">#include</span>&nbsp;<span title="c_∨_l" class="c_∨_l">&lt;string&gt;</span>
+
+<span title="l" class="l">class</span>&nbsp;<span title="l" class="l">Logger</span>
+<span title="l" class="l">{</span>
+&nbsp;&nbsp;<span title="l" class="l">public</span><span title="l" class="l">:</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">Logger</span><span title="l" class="l">(</span><span title="l" class="l">const</span>&nbsp;<span title="l" class="l">std</span><span title="l" class="l">::</span><span title="l" class="l">string</span>&nbsp;<span title="l" class="l">arguments</span>&nbsp;<span title="l" class="l">=</span>&nbsp;<span title="l" class="l">"</span><span title="l" class="l">"</span><span title="l" class="l">,</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">const</span>&nbsp;<span title="l" class="l">std</span><span title="l" class="l">::</span><span title="l" class="l">source_location</span>&nbsp;<span title="l" class="l">location</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">=</span>&nbsp;<span title="l" class="l">std</span><span title="l" class="l">::</span><span title="l" class="l">source_location</span><span title="l" class="l">::</span><span title="l" class="l">current</span><span title="l" class="l">(</span><span title="l" class="l">)</span><span title="l" class="l">)</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">:</span>&nbsp;<span title="l" class="l">m_arguments</span>&nbsp;<span title="l" class="l">{</span>&nbsp;<span title="l" class="l">arguments</span>&nbsp;<span title="l" class="l">}</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">,</span>&nbsp;<span title="l" class="l">m_location</span>&nbsp;<span title="l" class="l">{</span>&nbsp;<span title="l" class="l">location</span>&nbsp;<span title="l" class="l">}</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">{</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">std</span><span title="l" class="l">::</span><span title="l" class="l">cout</span>&nbsp;<span title="l" class="l">&lt;&lt;</span>&nbsp;<span title="l" class="l">'</span><span title="l" class="l">&gt;</span><span title="l" class="l">'</span>&nbsp;<span title="l" class="l">&lt;&lt;</span>&nbsp;<span title="l" class="l">m_location</span><span title="l" class="l">.</span><span title="l" class="l">function_name</span><span title="l" class="l">(</span><span title="l" class="l">)</span>&nbsp;<span title="l" class="l">&lt;&lt;</span>&nbsp;<span title="l" class="l">'</span><span title="l" class="l"> </span><span title="l" class="l">'</span>&nbsp;<span title="l" class="l">&lt;&lt;</span>&nbsp;<span title="l" class="l">m_arguments</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">&lt;&lt;</span>&nbsp;<span title="l" class="l">'</span><span title="l" class="l">\t</span><span title="l" class="l">'</span>&nbsp;<span title="l" class="l">&lt;&lt;</span>&nbsp;<span title="l" class="l">m_location</span><span title="l" class="l">.</span><span title="l" class="l">file_name</span><span title="l" class="l">(</span><span title="l" class="l">)</span>&nbsp;<span title="l" class="l">&lt;&lt;</span>&nbsp;<span title="l" class="l">'</span><span title="l" class="l"> </span><span title="l" class="l">'</span>&nbsp;<span title="l" class="l">&lt;&lt;</span>&nbsp;<span title="l" class="l">m_location</span><span title="l" class="l">.</span><span title="l" class="l">line</span><span title="l" class="l">(</span><span title="l" class="l">)</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">&lt;&lt;</span>&nbsp;<span title="l" class="l">'</span><span title="l" class="l">|</span><span title="l" class="l">'</span>&nbsp;<span title="l" class="l">&lt;&lt;</span>&nbsp;<span title="l" class="l">m_location</span><span title="l" class="l">.</span><span title="l" class="l">column</span><span title="l" class="l">(</span><span title="l" class="l">)</span>&nbsp;<span title="l" class="l">&lt;&lt;</span>&nbsp;<span title="l" class="l">'</span><span title="l" class="l">\n</span><span title="l" class="l">'</span><span title="l" class="l">;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">}</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">~</span><span title="l" class="l">Logger</span><span title="l" class="l">(</span><span title="l" class="l">)</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">{</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">std</span><span title="l" class="l">::</span><span title="l" class="l">cout</span>&nbsp;<span title="l" class="l">&lt;&lt;</span>&nbsp;<span title="l" class="l">'</span><span title="l" class="l">&lt;</span><span title="l" class="l">'</span>&nbsp;<span title="l" class="l">&lt;&lt;</span>&nbsp;<span title="l" class="l">m_location</span><span title="l" class="l">.</span><span title="l" class="l">function_name</span><span title="l" class="l">(</span><span title="l" class="l">)</span>&nbsp;<span title="l" class="l">&lt;&lt;</span>&nbsp;<span title="l" class="l">std</span><span title="l" class="l">::</span><span title="l" class="l">endl</span><span title="l" class="l">;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">}</span>
+&nbsp;&nbsp;<span title="l" class="l">private</span><span title="l" class="l">:</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">std</span><span title="l" class="l">::</span><span title="l" class="l">string</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">m_arguments</span><span title="l" class="l">;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">std</span><span title="l" class="l">::</span><span title="l" class="l">source_location</span>&nbsp;<span title="l" class="l">m_location</span><span title="l" class="l">;</span>
+<span title="l" class="l">}</span><span title="l" class="l">;</span>
+
+<span title="⊤" class="⊤">auto</span>&nbsp;<span title="⊤" class="⊤">factorial</span><span title="⊤" class="⊤">(</span><span title="⊤" class="⊤">std</span><span title="⊤" class="⊤">::</span><span title="⊤" class="⊤">unsigned_integral</span>&nbsp;<span title="⊤" class="⊤">auto</span>&nbsp;<span title="⊤" class="⊤">n</span><span title="⊤" class="⊤">)</span>
+<span title="⊤" class="⊤">{</span>
+&nbsp;&nbsp;<span title="l" class="l">Logger</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">log</span>&nbsp;<span title="l" class="l">{</span>&nbsp;<span title="l" class="l">std</span><span title="l" class="l">::</span><span title="l" class="l">to_string</span><span title="l" class="l">(</span><span title="l" class="l">n</span><span title="l" class="l">)</span>&nbsp;<span title="l" class="l">}</span><span title="l" class="l">;</span>
+&nbsp;&nbsp;<span title="i" class="i">decltype</span><span title="i" class="i">(</span><span title="i" class="i">n</span><span title="i" class="i">)</span>&nbsp;<span title="i" class="i">result</span>&nbsp;<span title="i" class="i">{</span>&nbsp;<span title="i" class="i">1</span>&nbsp;<span title="i" class="i">}</span><span title="i" class="i">;</span>
+&nbsp;&nbsp;<span title="i" class="i">while</span>&nbsp;<span title="⊤" class="⊤">(</span><span title="⊤" class="⊤">n</span>&nbsp;<span title="i" class="i">&gt;</span>&nbsp;<span title="⊤" class="⊤">1</span><span title="i" class="i">)</span>
+&nbsp;&nbsp;<span title="i" class="i">{</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span title="i" class="i">result</span>&nbsp;<span title="i_∧_¬c" class="i_∧_¬c">*=</span>&nbsp;<span title="⊤" class="⊤">n</span><span title="i" class="i">--</span><span title="i" class="i">;</span>
+&nbsp;&nbsp;<span title="i" class="i">}</span>
+&nbsp;&nbsp;<span title="i" class="i">return</span>&nbsp;<span title="i" class="i">result</span><span title="⊤" class="⊤">;</span>
+<span title="⊤" class="⊤">}</span></pre><hr><pre><span title="⊤" class="⊤">#include</span>&nbsp;<span title="⊤" class="⊤">&lt;concepts&gt;</span>
+<span title="c" class="c">#include</span>&nbsp;<span title="c" class="c">&lt;exception&gt;</span>
+<span title="c" class="c">#include</span>&nbsp;<span title="c" class="c">&lt;stdexcept&gt;</span>
+<span title="c_∨_l" class="c_∨_l">#include</span>&nbsp;<span title="c_∨_l" class="c_∨_l">&lt;string&gt;</span>
+
+<span title="c" class="c">auto</span>&nbsp;<span title="c" class="c">unsigned_checked_product</span><span title="c" class="c">(</span><span title="c" class="c">const</span>&nbsp;<span title="c" class="c">std</span><span title="c" class="c">::</span><span title="c" class="c">unsigned_integral</span>&nbsp;<span title="c" class="c">auto</span><span title="c" class="c">&</span>&nbsp;<span title="c" class="c">a</span><span title="c" class="c">,</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span title="c" class="c">const</span>&nbsp;<span title="c" class="c">std</span><span title="c" class="c">::</span><span title="c" class="c">unsigned_integral</span>&nbsp;<span title="c" class="c">auto</span><span title="c" class="c">&</span>&nbsp;<span title="c" class="c">b</span><span title="c" class="c">)</span>
+<span title="c" class="c">{</span>
+&nbsp;&nbsp;<span title="c" class="c">auto</span>&nbsp;<span title="c" class="c">x</span>&nbsp;<span title="c" class="c">{</span>&nbsp;<span title="c" class="c">static_cast</span><span title="c" class="c">&lt;</span><span title="c" class="c">decltype</span><span title="c" class="c">(</span><span title="c" class="c">a</span><span title="c" class="c">)</span><span title="c" class="c">&gt;</span><span title="c" class="c">(</span><span title="c" class="c">a</span>&nbsp;<span title="c" class="c">*</span>&nbsp;<span title="c" class="c">b</span><span title="c" class="c">)</span>&nbsp;<span title="c" class="c">}</span><span title="c" class="c">;</span>
+&nbsp;&nbsp;<span title="c" class="c">if</span>&nbsp;<span title="c" class="c">(</span><span title="c" class="c">a</span>&nbsp;<span title="c" class="c">&&</span>&nbsp;<span title="c" class="c">x</span>&nbsp;<span title="c" class="c">/</span>&nbsp;<span title="c" class="c">a</span>&nbsp;<span title="c" class="c">!=</span>&nbsp;<span title="c" class="c">b</span><span title="c" class="c">)</span>
+&nbsp;&nbsp;<span title="c" class="c">{</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span title="c" class="c">throw</span>&nbsp;<span title="c" class="c">std</span><span title="c" class="c">::</span><span title="c" class="c">overflow_error</span><span title="c" class="c">(</span><span title="c" class="c">std</span><span title="c" class="c">::</span><span title="c" class="c">to_string</span><span title="c" class="c">(</span><span title="c" class="c">a</span><span title="c" class="c">)</span>&nbsp;<span title="c" class="c">+</span>&nbsp;<span title="c" class="c">"</span><span title="c" class="c"> * </span><span title="c" class="c">"</span>&nbsp;<span title="c" class="c">+</span>&nbsp;<span title="c" class="c">std</span><span title="c" class="c">::</span><span title="c" class="c">to_string</span><span title="c" class="c">(</span><span title="c" class="c">b</span><span title="c" class="c">)</span><span title="c" class="c">)</span><span title="c" class="c">;</span>
+&nbsp;&nbsp;<span title="c" class="c">}</span>
+&nbsp;&nbsp;<span title="c" class="c">return</span>&nbsp;<span title="c" class="c">x</span><span title="c" class="c">;</span>
+<span title="c" class="c">}</span>
+
+<span title="⊤" class="⊤">auto</span>&nbsp;<span title="⊤" class="⊤">factorial</span><span title="⊤" class="⊤">(</span><span title="⊤" class="⊤">std</span><span title="⊤" class="⊤">::</span><span title="⊤" class="⊤">unsigned_integral</span>&nbsp;<span title="⊤" class="⊤">auto</span>&nbsp;<span title="⊤" class="⊤">n</span><span title="⊤" class="⊤">)</span>&nbsp;<span title="r" class="r">-&gt;</span>&nbsp;<span title="r" class="r">decltype</span><span title="r" class="r">(</span><span title="r" class="r">n</span><span title="r" class="r">)</span>
+<span title="⊤" class="⊤">{</span>
+&nbsp;&nbsp;<span title="r" class="r">return</span>&nbsp;<span title="⊤" class="⊤">(</span><span title="⊤" class="⊤">n</span>&nbsp;<span title="r" class="r">==</span>&nbsp;<span title="r" class="r">0</span>&nbsp;<span title="r" class="r">?</span>&nbsp;<span title="⊤" class="⊤">1</span>&nbsp;<span title="r" class="r">:</span>&nbsp;<span title="c" class="c">unsigned_checked_product</span><span title="c" class="c">(</span><span title="r" class="r">n</span><span title="c" class="c">,</span>&nbsp;<span title="r" class="r">factorial</span><span title="r" class="r">(</span><span title="⊤" class="⊤">n</span>&nbsp;<span title="r" class="r">-</span>&nbsp;<span title="r" class="r">1</span><span title="r" class="r">)</span><span title="c" class="c">)</span><span title="r" class="r">)</span><span title="⊤" class="⊤">;</span>
+<span title="⊤" class="⊤">}</span></pre><hr><pre><span title="⊤" class="⊤">#include</span>&nbsp;<span title="⊤" class="⊤">&lt;concepts&gt;</span>
+<span title="c" class="c">#include</span>&nbsp;<span title="c" class="c">&lt;exception&gt;</span>
+<span title="c" class="c">#include</span>&nbsp;<span title="c" class="c">&lt;stdexcept&gt;</span>
+<span title="c_∨_l" class="c_∨_l">#include</span>&nbsp;<span title="c_∨_l" class="c_∨_l">&lt;string&gt;</span>
+
+<span title="c" class="c">auto</span>&nbsp;<span title="c" class="c">unsigned_checked_product</span><span title="c" class="c">(</span><span title="c" class="c">const</span>&nbsp;<span title="c" class="c">std</span><span title="c" class="c">::</span><span title="c" class="c">unsigned_integral</span>&nbsp;<span title="c" class="c">auto</span><span title="c" class="c">&</span>&nbsp;<span title="c" class="c">a</span><span title="c" class="c">,</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span title="c" class="c">const</span>&nbsp;<span title="c" class="c">std</span><span title="c" class="c">::</span><span title="c" class="c">unsigned_integral</span>&nbsp;<span title="c" class="c">auto</span><span title="c" class="c">&</span>&nbsp;<span title="c" class="c">b</span><span title="c" class="c">)</span>
+<span title="c" class="c">{</span>
+&nbsp;&nbsp;<span title="c" class="c">auto</span>&nbsp;<span title="c" class="c">x</span>&nbsp;<span title="c" class="c">{</span>&nbsp;<span title="c" class="c">static_cast</span><span title="c" class="c">&lt;</span><span title="c" class="c">decltype</span><span title="c" class="c">(</span><span title="c" class="c">a</span><span title="c" class="c">)</span><span title="c" class="c">&gt;</span><span title="c" class="c">(</span><span title="c" class="c">a</span>&nbsp;<span title="c" class="c">*</span>&nbsp;<span title="c" class="c">b</span><span title="c" class="c">)</span>&nbsp;<span title="c" class="c">}</span><span title="c" class="c">;</span>
+&nbsp;&nbsp;<span title="c" class="c">if</span>&nbsp;<span title="c" class="c">(</span><span title="c" class="c">a</span>&nbsp;<span title="c" class="c">&&</span>&nbsp;<span title="c" class="c">x</span>&nbsp;<span title="c" class="c">/</span>&nbsp;<span title="c" class="c">a</span>&nbsp;<span title="c" class="c">!=</span>&nbsp;<span title="c" class="c">b</span><span title="c" class="c">)</span>
+&nbsp;&nbsp;<span title="c" class="c">{</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span title="c" class="c">throw</span>&nbsp;<span title="c" class="c">std</span><span title="c" class="c">::</span><span title="c" class="c">overflow_error</span><span title="c" class="c">(</span><span title="c" class="c">std</span><span title="c" class="c">::</span><span title="c" class="c">to_string</span><span title="c" class="c">(</span><span title="c" class="c">a</span><span title="c" class="c">)</span>&nbsp;<span title="c" class="c">+</span>&nbsp;<span title="c" class="c">"</span><span title="c" class="c"> * </span><span title="c" class="c">"</span>&nbsp;<span title="c" class="c">+</span>&nbsp;<span title="c" class="c">std</span><span title="c" class="c">::</span><span title="c" class="c">to_string</span><span title="c" class="c">(</span><span title="c" class="c">b</span><span title="c" class="c">)</span><span title="c" class="c">)</span><span title="c" class="c">;</span>
+&nbsp;&nbsp;<span title="c" class="c">}</span>
+&nbsp;&nbsp;<span title="c" class="c">return</span>&nbsp;<span title="c" class="c">x</span><span title="c" class="c">;</span>
+<span title="c" class="c">}</span>
+
+<span title="⊤" class="⊤">auto</span>&nbsp;<span title="⊤" class="⊤">factorial</span><span title="⊤" class="⊤">(</span><span title="⊤" class="⊤">std</span><span title="⊤" class="⊤">::</span><span title="⊤" class="⊤">unsigned_integral</span>&nbsp;<span title="⊤" class="⊤">auto</span>&nbsp;<span title="⊤" class="⊤">n</span><span title="⊤" class="⊤">)</span>
+<span title="⊤" class="⊤">{</span>
+&nbsp;&nbsp;<span title="i" class="i">decltype</span><span title="i" class="i">(</span><span title="i" class="i">n</span><span title="i" class="i">)</span>&nbsp;<span title="i" class="i">result</span>&nbsp;<span title="i" class="i">{</span>&nbsp;<span title="i" class="i">1</span>&nbsp;<span title="i" class="i">}</span><span title="i" class="i">;</span>
+&nbsp;&nbsp;<span title="i" class="i">while</span>&nbsp;<span title="⊤" class="⊤">(</span><span title="⊤" class="⊤">n</span>&nbsp;<span title="i" class="i">&gt;</span>&nbsp;<span title="⊤" class="⊤">1</span><span title="i" class="i">)</span>
+&nbsp;&nbsp;<span title="i" class="i">{</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span title="i" class="i">result</span>&nbsp;<span title="c_∧_i" class="c_∧_i">=</span>&nbsp;<span title="c" class="c">unsigned_checked_product</span><span title="c" class="c">(</span><span title="c_∧_i" class="c_∧_i">result</span><span title="c" class="c">,</span>&nbsp;<span title="⊤" class="⊤">n</span><span title="i" class="i">--</span><span title="c" class="c">)</span><span title="i" class="i">;</span>
+&nbsp;&nbsp;<span title="i" class="i">}</span>
+&nbsp;&nbsp;<span title="i" class="i">return</span>&nbsp;<span title="i" class="i">result</span><span title="⊤" class="⊤">;</span>
+<span title="⊤" class="⊤">}</span></pre><hr><pre><span title="⊤" class="⊤">#include</span>&nbsp;<span title="⊤" class="⊤">&lt;concepts&gt;</span>
+<span title="c" class="c">#include</span>&nbsp;<span title="c" class="c">&lt;exception&gt;</span>
+<span title="c" class="c">#include</span>&nbsp;<span title="c" class="c">&lt;stdexcept&gt;</span>
+<span title="l" class="l">#include</span>&nbsp;<span title="l" class="l">&lt;iostream&gt;</span>
+<span title="l" class="l">#include</span>&nbsp;<span title="l" class="l">&lt;source_location&gt;</span>
+<span title="c_∨_l" class="c_∨_l">#include</span>&nbsp;<span title="c_∨_l" class="c_∨_l">&lt;string&gt;</span>
+
+<span title="c" class="c">auto</span>&nbsp;<span title="c" class="c">unsigned_checked_product</span><span title="c" class="c">(</span><span title="c" class="c">const</span>&nbsp;<span title="c" class="c">std</span><span title="c" class="c">::</span><span title="c" class="c">unsigned_integral</span>&nbsp;<span title="c" class="c">auto</span><span title="c" class="c">&</span>&nbsp;<span title="c" class="c">a</span><span title="c" class="c">,</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span title="c" class="c">const</span>&nbsp;<span title="c" class="c">std</span><span title="c" class="c">::</span><span title="c" class="c">unsigned_integral</span>&nbsp;<span title="c" class="c">auto</span><span title="c" class="c">&</span>&nbsp;<span title="c" class="c">b</span><span title="c" class="c">)</span>
+<span title="c" class="c">{</span>
+&nbsp;&nbsp;<span title="c" class="c">auto</span>&nbsp;<span title="c" class="c">x</span>&nbsp;<span title="c" class="c">{</span>&nbsp;<span title="c" class="c">static_cast</span><span title="c" class="c">&lt;</span><span title="c" class="c">decltype</span><span title="c" class="c">(</span><span title="c" class="c">a</span><span title="c" class="c">)</span><span title="c" class="c">&gt;</span><span title="c" class="c">(</span><span title="c" class="c">a</span>&nbsp;<span title="c" class="c">*</span>&nbsp;<span title="c" class="c">b</span><span title="c" class="c">)</span>&nbsp;<span title="c" class="c">}</span><span title="c" class="c">;</span>
+&nbsp;&nbsp;<span title="c" class="c">if</span>&nbsp;<span title="c" class="c">(</span><span title="c" class="c">a</span>&nbsp;<span title="c" class="c">&&</span>&nbsp;<span title="c" class="c">x</span>&nbsp;<span title="c" class="c">/</span>&nbsp;<span title="c" class="c">a</span>&nbsp;<span title="c" class="c">!=</span>&nbsp;<span title="c" class="c">b</span><span title="c" class="c">)</span>
+&nbsp;&nbsp;<span title="c" class="c">{</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span title="c" class="c">throw</span>&nbsp;<span title="c" class="c">std</span><span title="c" class="c">::</span><span title="c" class="c">overflow_error</span><span title="c" class="c">(</span><span title="c" class="c">std</span><span title="c" class="c">::</span><span title="c" class="c">to_string</span><span title="c" class="c">(</span><span title="c" class="c">a</span><span title="c" class="c">)</span>&nbsp;<span title="c" class="c">+</span>&nbsp;<span title="c" class="c">"</span><span title="c" class="c"> * </span><span title="c" class="c">"</span>&nbsp;<span title="c" class="c">+</span>&nbsp;<span title="c" class="c">std</span><span title="c" class="c">::</span><span title="c" class="c">to_string</span><span title="c" class="c">(</span><span title="c" class="c">b</span><span title="c" class="c">)</span><span title="c" class="c">)</span><span title="c" class="c">;</span>
+&nbsp;&nbsp;<span title="c" class="c">}</span>
+&nbsp;&nbsp;<span title="c" class="c">return</span>&nbsp;<span title="c" class="c">x</span><span title="c" class="c">;</span>
+<span title="c" class="c">}</span>
+
+<span title="l" class="l">class</span>&nbsp;<span title="l" class="l">Logger</span>
+<span title="l" class="l">{</span>
+&nbsp;&nbsp;<span title="l" class="l">public</span><span title="l" class="l">:</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">Logger</span><span title="l" class="l">(</span><span title="l" class="l">const</span>&nbsp;<span title="l" class="l">std</span><span title="l" class="l">::</span><span title="l" class="l">string</span>&nbsp;<span title="l" class="l">arguments</span>&nbsp;<span title="l" class="l">=</span>&nbsp;<span title="l" class="l">"</span><span title="l" class="l">"</span><span title="l" class="l">,</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">const</span>&nbsp;<span title="l" class="l">std</span><span title="l" class="l">::</span><span title="l" class="l">source_location</span>&nbsp;<span title="l" class="l">location</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">=</span>&nbsp;<span title="l" class="l">std</span><span title="l" class="l">::</span><span title="l" class="l">source_location</span><span title="l" class="l">::</span><span title="l" class="l">current</span><span title="l" class="l">(</span><span title="l" class="l">)</span><span title="l" class="l">)</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">:</span>&nbsp;<span title="l" class="l">m_arguments</span>&nbsp;<span title="l" class="l">{</span>&nbsp;<span title="l" class="l">arguments</span>&nbsp;<span title="l" class="l">}</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">,</span>&nbsp;<span title="l" class="l">m_location</span>&nbsp;<span title="l" class="l">{</span>&nbsp;<span title="l" class="l">location</span>&nbsp;<span title="l" class="l">}</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">{</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">std</span><span title="l" class="l">::</span><span title="l" class="l">cout</span>&nbsp;<span title="l" class="l">&lt;&lt;</span>&nbsp;<span title="l" class="l">'</span><span title="l" class="l">&gt;</span><span title="l" class="l">'</span>&nbsp;<span title="l" class="l">&lt;&lt;</span>&nbsp;<span title="l" class="l">m_location</span><span title="l" class="l">.</span><span title="l" class="l">function_name</span><span title="l" class="l">(</span><span title="l" class="l">)</span>&nbsp;<span title="l" class="l">&lt;&lt;</span>&nbsp;<span title="l" class="l">'</span><span title="l" class="l"> </span><span title="l" class="l">'</span>&nbsp;<span title="l" class="l">&lt;&lt;</span>&nbsp;<span title="l" class="l">m_arguments</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">&lt;&lt;</span>&nbsp;<span title="l" class="l">'</span><span title="l" class="l">\t</span><span title="l" class="l">'</span>&nbsp;<span title="l" class="l">&lt;&lt;</span>&nbsp;<span title="l" class="l">m_location</span><span title="l" class="l">.</span><span title="l" class="l">file_name</span><span title="l" class="l">(</span><span title="l" class="l">)</span>&nbsp;<span title="l" class="l">&lt;&lt;</span>&nbsp;<span title="l" class="l">'</span><span title="l" class="l"> </span><span title="l" class="l">'</span>&nbsp;<span title="l" class="l">&lt;&lt;</span>&nbsp;<span title="l" class="l">m_location</span><span title="l" class="l">.</span><span title="l" class="l">line</span><span title="l" class="l">(</span><span title="l" class="l">)</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">&lt;&lt;</span>&nbsp;<span title="l" class="l">'</span><span title="l" class="l">|</span><span title="l" class="l">'</span>&nbsp;<span title="l" class="l">&lt;&lt;</span>&nbsp;<span title="l" class="l">m_location</span><span title="l" class="l">.</span><span title="l" class="l">column</span><span title="l" class="l">(</span><span title="l" class="l">)</span>&nbsp;<span title="l" class="l">&lt;&lt;</span>&nbsp;<span title="l" class="l">'</span><span title="l" class="l">\n</span><span title="l" class="l">'</span><span title="l" class="l">;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">}</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">~</span><span title="l" class="l">Logger</span><span title="l" class="l">(</span><span title="l" class="l">)</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">{</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">std</span><span title="l" class="l">::</span><span title="l" class="l">cout</span>&nbsp;<span title="l" class="l">&lt;&lt;</span>&nbsp;<span title="l" class="l">'</span><span title="l" class="l">&lt;</span><span title="l" class="l">'</span>&nbsp;<span title="l" class="l">&lt;&lt;</span>&nbsp;<span title="l" class="l">m_location</span><span title="l" class="l">.</span><span title="l" class="l">function_name</span><span title="l" class="l">(</span><span title="l" class="l">)</span>&nbsp;<span title="l" class="l">&lt;&lt;</span>&nbsp;<span title="l" class="l">std</span><span title="l" class="l">::</span><span title="l" class="l">endl</span><span title="l" class="l">;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">}</span>
+&nbsp;&nbsp;<span title="l" class="l">private</span><span title="l" class="l">:</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">std</span><span title="l" class="l">::</span><span title="l" class="l">string</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">m_arguments</span><span title="l" class="l">;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">std</span><span title="l" class="l">::</span><span title="l" class="l">source_location</span>&nbsp;<span title="l" class="l">m_location</span><span title="l" class="l">;</span>
+<span title="l" class="l">}</span><span title="l" class="l">;</span>
+
+<span title="⊤" class="⊤">auto</span>&nbsp;<span title="⊤" class="⊤">factorial</span><span title="⊤" class="⊤">(</span><span title="⊤" class="⊤">std</span><span title="⊤" class="⊤">::</span><span title="⊤" class="⊤">unsigned_integral</span>&nbsp;<span title="⊤" class="⊤">auto</span>&nbsp;<span title="⊤" class="⊤">n</span><span title="⊤" class="⊤">)</span>&nbsp;<span title="r" class="r">-&gt;</span>&nbsp;<span title="r" class="r">decltype</span><span title="r" class="r">(</span><span title="r" class="r">n</span><span title="r" class="r">)</span>
+<span title="⊤" class="⊤">{</span>
+&nbsp;&nbsp;<span title="l" class="l">Logger</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">log</span>&nbsp;<span title="l" class="l">{</span>&nbsp;<span title="l" class="l">std</span><span title="l" class="l">::</span><span title="l" class="l">to_string</span><span title="l" class="l">(</span><span title="l" class="l">n</span><span title="l" class="l">)</span>&nbsp;<span title="l" class="l">}</span><span title="l" class="l">;</span>
+&nbsp;&nbsp;<span title="r" class="r">return</span>&nbsp;<span title="⊤" class="⊤">(</span><span title="⊤" class="⊤">n</span>&nbsp;<span title="r" class="r">==</span>&nbsp;<span title="r" class="r">0</span>&nbsp;<span title="r" class="r">?</span>&nbsp;<span title="⊤" class="⊤">1</span>&nbsp;<span title="r" class="r">:</span>&nbsp;<span title="c" class="c">unsigned_checked_product</span><span title="c" class="c">(</span><span title="r" class="r">n</span><span title="c" class="c">,</span>&nbsp;<span title="r" class="r">factorial</span><span title="r" class="r">(</span><span title="⊤" class="⊤">n</span>&nbsp;<span title="r" class="r">-</span>&nbsp;<span title="r" class="r">1</span><span title="r" class="r">)</span><span title="c" class="c">)</span><span title="r" class="r">)</span><span title="⊤" class="⊤">;</span>
+<span title="⊤" class="⊤">}</span></pre><hr><pre><span title="⊤" class="⊤">#include</span>&nbsp;<span title="⊤" class="⊤">&lt;concepts&gt;</span>
+<span title="c" class="c">#include</span>&nbsp;<span title="c" class="c">&lt;exception&gt;</span>
+<span title="c" class="c">#include</span>&nbsp;<span title="c" class="c">&lt;stdexcept&gt;</span>
+<span title="l" class="l">#include</span>&nbsp;<span title="l" class="l">&lt;iostream&gt;</span>
+<span title="l" class="l">#include</span>&nbsp;<span title="l" class="l">&lt;source_location&gt;</span>
+<span title="c_∨_l" class="c_∨_l">#include</span>&nbsp;<span title="c_∨_l" class="c_∨_l">&lt;string&gt;</span>
+
+<span title="c" class="c">auto</span>&nbsp;<span title="c" class="c">unsigned_checked_product</span><span title="c" class="c">(</span><span title="c" class="c">const</span>&nbsp;<span title="c" class="c">std</span><span title="c" class="c">::</span><span title="c" class="c">unsigned_integral</span>&nbsp;<span title="c" class="c">auto</span><span title="c" class="c">&</span>&nbsp;<span title="c" class="c">a</span><span title="c" class="c">,</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span title="c" class="c">const</span>&nbsp;<span title="c" class="c">std</span><span title="c" class="c">::</span><span title="c" class="c">unsigned_integral</span>&nbsp;<span title="c" class="c">auto</span><span title="c" class="c">&</span>&nbsp;<span title="c" class="c">b</span><span title="c" class="c">)</span>
+<span title="c" class="c">{</span>
+&nbsp;&nbsp;<span title="c" class="c">auto</span>&nbsp;<span title="c" class="c">x</span>&nbsp;<span title="c" class="c">{</span>&nbsp;<span title="c" class="c">static_cast</span><span title="c" class="c">&lt;</span><span title="c" class="c">decltype</span><span title="c" class="c">(</span><span title="c" class="c">a</span><span title="c" class="c">)</span><span title="c" class="c">&gt;</span><span title="c" class="c">(</span><span title="c" class="c">a</span>&nbsp;<span title="c" class="c">*</span>&nbsp;<span title="c" class="c">b</span><span title="c" class="c">)</span>&nbsp;<span title="c" class="c">}</span><span title="c" class="c">;</span>
+&nbsp;&nbsp;<span title="c" class="c">if</span>&nbsp;<span title="c" class="c">(</span><span title="c" class="c">a</span>&nbsp;<span title="c" class="c">&&</span>&nbsp;<span title="c" class="c">x</span>&nbsp;<span title="c" class="c">/</span>&nbsp;<span title="c" class="c">a</span>&nbsp;<span title="c" class="c">!=</span>&nbsp;<span title="c" class="c">b</span><span title="c" class="c">)</span>
+&nbsp;&nbsp;<span title="c" class="c">{</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span title="c" class="c">throw</span>&nbsp;<span title="c" class="c">std</span><span title="c" class="c">::</span><span title="c" class="c">overflow_error</span><span title="c" class="c">(</span><span title="c" class="c">std</span><span title="c" class="c">::</span><span title="c" class="c">to_string</span><span title="c" class="c">(</span><span title="c" class="c">a</span><span title="c" class="c">)</span>&nbsp;<span title="c" class="c">+</span>&nbsp;<span title="c" class="c">"</span><span title="c" class="c"> * </span><span title="c" class="c">"</span>&nbsp;<span title="c" class="c">+</span>&nbsp;<span title="c" class="c">std</span><span title="c" class="c">::</span><span title="c" class="c">to_string</span><span title="c" class="c">(</span><span title="c" class="c">b</span><span title="c" class="c">)</span><span title="c" class="c">)</span><span title="c" class="c">;</span>
+&nbsp;&nbsp;<span title="c" class="c">}</span>
+&nbsp;&nbsp;<span title="c" class="c">return</span>&nbsp;<span title="c" class="c">x</span><span title="c" class="c">;</span>
+<span title="c" class="c">}</span>
+
+<span title="l" class="l">class</span>&nbsp;<span title="l" class="l">Logger</span>
+<span title="l" class="l">{</span>
+&nbsp;&nbsp;<span title="l" class="l">public</span><span title="l" class="l">:</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">Logger</span><span title="l" class="l">(</span><span title="l" class="l">const</span>&nbsp;<span title="l" class="l">std</span><span title="l" class="l">::</span><span title="l" class="l">string</span>&nbsp;<span title="l" class="l">arguments</span>&nbsp;<span title="l" class="l">=</span>&nbsp;<span title="l" class="l">"</span><span title="l" class="l">"</span><span title="l" class="l">,</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">const</span>&nbsp;<span title="l" class="l">std</span><span title="l" class="l">::</span><span title="l" class="l">source_location</span>&nbsp;<span title="l" class="l">location</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">=</span>&nbsp;<span title="l" class="l">std</span><span title="l" class="l">::</span><span title="l" class="l">source_location</span><span title="l" class="l">::</span><span title="l" class="l">current</span><span title="l" class="l">(</span><span title="l" class="l">)</span><span title="l" class="l">)</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">:</span>&nbsp;<span title="l" class="l">m_arguments</span>&nbsp;<span title="l" class="l">{</span>&nbsp;<span title="l" class="l">arguments</span>&nbsp;<span title="l" class="l">}</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">,</span>&nbsp;<span title="l" class="l">m_location</span>&nbsp;<span title="l" class="l">{</span>&nbsp;<span title="l" class="l">location</span>&nbsp;<span title="l" class="l">}</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">{</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">std</span><span title="l" class="l">::</span><span title="l" class="l">cout</span>&nbsp;<span title="l" class="l">&lt;&lt;</span>&nbsp;<span title="l" class="l">'</span><span title="l" class="l">&gt;</span><span title="l" class="l">'</span>&nbsp;<span title="l" class="l">&lt;&lt;</span>&nbsp;<span title="l" class="l">m_location</span><span title="l" class="l">.</span><span title="l" class="l">function_name</span><span title="l" class="l">(</span><span title="l" class="l">)</span>&nbsp;<span title="l" class="l">&lt;&lt;</span>&nbsp;<span title="l" class="l">'</span><span title="l" class="l"> </span><span title="l" class="l">'</span>&nbsp;<span title="l" class="l">&lt;&lt;</span>&nbsp;<span title="l" class="l">m_arguments</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">&lt;&lt;</span>&nbsp;<span title="l" class="l">'</span><span title="l" class="l">\t</span><span title="l" class="l">'</span>&nbsp;<span title="l" class="l">&lt;&lt;</span>&nbsp;<span title="l" class="l">m_location</span><span title="l" class="l">.</span><span title="l" class="l">file_name</span><span title="l" class="l">(</span><span title="l" class="l">)</span>&nbsp;<span title="l" class="l">&lt;&lt;</span>&nbsp;<span title="l" class="l">'</span><span title="l" class="l"> </span><span title="l" class="l">'</span>&nbsp;<span title="l" class="l">&lt;&lt;</span>&nbsp;<span title="l" class="l">m_location</span><span title="l" class="l">.</span><span title="l" class="l">line</span><span title="l" class="l">(</span><span title="l" class="l">)</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">&lt;&lt;</span>&nbsp;<span title="l" class="l">'</span><span title="l" class="l">|</span><span title="l" class="l">'</span>&nbsp;<span title="l" class="l">&lt;&lt;</span>&nbsp;<span title="l" class="l">m_location</span><span title="l" class="l">.</span><span title="l" class="l">column</span><span title="l" class="l">(</span><span title="l" class="l">)</span>&nbsp;<span title="l" class="l">&lt;&lt;</span>&nbsp;<span title="l" class="l">'</span><span title="l" class="l">\n</span><span title="l" class="l">'</span><span title="l" class="l">;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">}</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">~</span><span title="l" class="l">Logger</span><span title="l" class="l">(</span><span title="l" class="l">)</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">{</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">std</span><span title="l" class="l">::</span><span title="l" class="l">cout</span>&nbsp;<span title="l" class="l">&lt;&lt;</span>&nbsp;<span title="l" class="l">'</span><span title="l" class="l">&lt;</span><span title="l" class="l">'</span>&nbsp;<span title="l" class="l">&lt;&lt;</span>&nbsp;<span title="l" class="l">m_location</span><span title="l" class="l">.</span><span title="l" class="l">function_name</span><span title="l" class="l">(</span><span title="l" class="l">)</span>&nbsp;<span title="l" class="l">&lt;&lt;</span>&nbsp;<span title="l" class="l">std</span><span title="l" class="l">::</span><span title="l" class="l">endl</span><span title="l" class="l">;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">}</span>
+&nbsp;&nbsp;<span title="l" class="l">private</span><span title="l" class="l">:</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">std</span><span title="l" class="l">::</span><span title="l" class="l">string</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">m_arguments</span><span title="l" class="l">;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">std</span><span title="l" class="l">::</span><span title="l" class="l">source_location</span>&nbsp;<span title="l" class="l">m_location</span><span title="l" class="l">;</span>
+<span title="l" class="l">}</span><span title="l" class="l">;</span>
+
+<span title="⊤" class="⊤">auto</span>&nbsp;<span title="⊤" class="⊤">factorial</span><span title="⊤" class="⊤">(</span><span title="⊤" class="⊤">std</span><span title="⊤" class="⊤">::</span><span title="⊤" class="⊤">unsigned_integral</span>&nbsp;<span title="⊤" class="⊤">auto</span>&nbsp;<span title="⊤" class="⊤">n</span><span title="⊤" class="⊤">)</span>
+<span title="⊤" class="⊤">{</span>
+&nbsp;&nbsp;<span title="l" class="l">Logger</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span title="l" class="l">log</span>&nbsp;<span title="l" class="l">{</span>&nbsp;<span title="l" class="l">std</span><span title="l" class="l">::</span><span title="l" class="l">to_string</span><span title="l" class="l">(</span><span title="l" class="l">n</span><span title="l" class="l">)</span>&nbsp;<span title="l" class="l">}</span><span title="l" class="l">;</span>
+&nbsp;&nbsp;<span title="i" class="i">decltype</span><span title="i" class="i">(</span><span title="i" class="i">n</span><span title="i" class="i">)</span>&nbsp;<span title="i" class="i">result</span>&nbsp;<span title="i" class="i">{</span>&nbsp;<span title="i" class="i">1</span>&nbsp;<span title="i" class="i">}</span><span title="i" class="i">;</span>
+&nbsp;&nbsp;<span title="i" class="i">while</span>&nbsp;<span title="⊤" class="⊤">(</span><span title="⊤" class="⊤">n</span>&nbsp;<span title="i" class="i">&gt;</span>&nbsp;<span title="⊤" class="⊤">1</span><span title="i" class="i">)</span>
+&nbsp;&nbsp;<span title="i" class="i">{</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span title="i" class="i">result</span>&nbsp;<span title="c_∧_i" class="c_∧_i">=</span>&nbsp;<span title="c" class="c">unsigned_checked_product</span><span title="c" class="c">(</span><span title="c_∧_i" class="c_∧_i">result</span><span title="c" class="c">,</span>&nbsp;<span title="⊤" class="⊤">n</span><span title="i" class="i">--</span><span title="c" class="c">)</span><span title="i" class="i">;</span>
+&nbsp;&nbsp;<span title="i" class="i">}</span>
+&nbsp;&nbsp;<span title="i" class="i">return</span>&nbsp;<span title="i" class="i">result</span><span title="⊤" class="⊤">;</span>
+<span title="⊤" class="⊤">}</span></pre><hr>
+      </div>
+    </div>
+
+
+
+<script>
+const alpha = 0.7;
+
+const colors = [
+  `rgba(229, 115, 115, ${alpha})`, // Soft Red
+  `rgba(100, 181, 246, ${alpha})`, // Soft Blue
+  `rgba(129, 199, 132, ${alpha})`, // Soft Green
+  `rgba(255, 241, 118, ${alpha})`, // Soft Yellow
+  `rgba(255, 183, 77, ${alpha})`,  // Soft Orange
+  `rgba(186, 104, 200, ${alpha})`, // Soft Purple
+  `rgba(77, 208, 225, ${alpha})`,  // Soft Cyan
+  `rgba(240, 98, 146, ${alpha})`,  // Soft Pink
+  `rgba(174, 213, 129, ${alpha})`, // Light Lime
+  `rgba(144, 164, 174, ${alpha})`, // Cool Gray
+  `rgba(128, 203, 196, ${alpha})`, // Soft Teal
+  `rgba(188, 170, 164, ${alpha})`, // Warm Brown
+  `rgba(220, 231, 117, ${alpha})`, // Light Olive
+  `rgba(121, 134, 203, ${alpha})`, // Muted Indigo
+  `rgba(161, 136, 127, ${alpha})`, // Dusty Maroon
+  `rgba(255, 138, 101, ${alpha})`, // Gentle Coral
+  `rgba(77, 182, 172, ${alpha})`,  // Turquoise Tint
+  `rgba(255, 213, 79, ${alpha})`,  // Muted Gold
+  `rgba(176, 190, 197, ${alpha})`, // Soft Silver
+  `rgba(206, 147, 216, ${alpha})`  // Light Violet
+];
+
+const featuresStr = "c,c_∧_i,c_∨_l,i,i_∧_¬c,l,r,r_∧_¬c,⊤,Unknown";
+const featuresRaw = featuresStr.split(",");
+
+let featureCount = new Map();
+const codeElements = document.querySelectorAll("#code span");
+codeElements.forEach(function(el){
+  const f = el.classList[0];
+  let c = featureCount.get(f);
+  if (c !== undefined)
+  {
+    featureCount.set(f, c + 1);
+  }
+  else
+  {
+    featureCount.set(f, 1); 
+  }
+});
+
+featureCount = [...featureCount.entries()].sort((a, b) => b[1] - a[1])
+
+let features = [];
+featureCount.forEach(function (f){
+    features.push(f[0]);
+})
+
+let activated = features.slice(0, 20);
+
+function updateCode()
+{
+  codeElements.forEach(function (el) {
+    if (activated.includes(el.classList[0]))
+    {
+      el.style.backgroundColor = colors[activated.indexOf(el.classList[0])];
+    }
+    else
+    {
+      el.style.backgroundColor = "transparent";
+    }
+  });
+}
+
+const button = document.createElement("button");
+button.appendChild(document.createTextNode("Disable All"));
+button.addEventListener("click", function() {
+  activated = [];
+  updateAll();
+});
+document.getElementById("featureSelect").appendChild(button);
+
+for (const feature in featureCount) {
+  const f = featureCount[feature][0]
+  const c = featureCount[feature][1]
+  const el = document.createElement("div");
+  const lbl = document.createElement("label");
+  el.appendChild(lbl);
+  const cb = document.createElement("input");
+  cb.type = "checkbox";
+  cb.id = f;
+
+  if (c === undefined)
+  {
+    cb.disabled = true;
+    c = 0;
+  }
+
+  cb.addEventListener("change", function () {
+    if (cb.checked)
+    {
+      activated.push(f);
+    }
+    else {
+      activated = activated.filter(function(item) {
+      return item !== f;
+      });
+    }
+    updateAll();
+    updateCode();
+  });
+
+  function update()
+  {
+    if (activated.includes(f))
+    {
+      cb.checked = true;
+      el.style.backgroundColor = colors[activated.indexOf(f)];
+    }
+    else{
+      cb.checked = false;
+      el.style.backgroundColor = "transparent";
+    }
+  }
+  cb["updateCheckedState"] = update;
+
+  lbl.appendChild(cb);
+
+  const span = document.createElement("span")
+  span.innerHTML = "<b style=\"padding-right: 30px\">" + f.replaceAll("_", " ") + "</b> (" + c + " Tokens)"
+
+  lbl.appendChild(span)
+  
+  const fs = document.getElementById("featureSelect");
+  fs.appendChild(el);
+}
+
+function updateAll()
+{
+  for (const feature in features) {
+    const f = features[feature]
+    const el = document.getElementById(f);
+    el.updateCheckedState();
+  }
+  updateCode();
+}
+updateAll();
+
+
+</script>
+</body>
+
+</html>
